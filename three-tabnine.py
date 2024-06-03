@@ -11,12 +11,8 @@ def get_oid():
 
 def list_sensors(manager):
     for sensor in manager.sensors():
-<<<<<<< Current
-        print(sensor)
-=======
         hostname = sensor.hostname()
         print(f"Sensor ID: {sensor.sid}, Hostname: {hostname}")
->>>>>>> Suggested by Tabnine
 
 def execute_task(manager, sensor_id, task):
     sensor = manager.sensor(sensor_id)
