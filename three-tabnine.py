@@ -17,6 +17,7 @@ def list_sensors(manager):
 def execute_task(manager, sensor_id, task):
     sensor = manager.sensor(sensor_id)
     response = sensor.task([task])
+    print("Task Response:")
     print(response)
 
 def main():
