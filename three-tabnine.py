@@ -2,6 +2,7 @@ import os
 import argparse
 import limacharlie
 import getpass
+import json
 
 def get_api_key():
     return os.environ['LIMACHARLIE_API_KEY']
@@ -16,9 +17,8 @@ def list_sensors(manager):
 
 def execute_task(manager, sensor_id, task):
     sensor = manager.sensor(sensor_id)
-    response = sensor.task([task])
-    print("Task Response:")
-    print(response)
+    response = sensor.task(task)
+    print(json.dumps(response, indent=4))
 
 def main():
     parser = argparse.ArgumentParser(description='Interact with LimaCharlie sensors.')
